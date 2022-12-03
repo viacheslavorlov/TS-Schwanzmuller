@@ -14,6 +14,7 @@ function add(n1: number, n2: number, showResult: boolean, phrase: string) {
 let x = 2; //* type number
 const y = 2.2; //* type 2.2 beacose const
 const printResult: boolean = true; //*  будет присвоет тип boolean
+
 let resPhrase = 'Result is: ';
 //? так нельзя сделать: resPhrase = 0;
 // ! resPhrase = 0; при создании переменной ей присваивается тип присвоенных данных,
