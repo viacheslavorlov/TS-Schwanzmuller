@@ -18,7 +18,6 @@ class Department {
     describe(this: Department) {
         console.log('Deprtment: ' + this.name);
     }
-
     addEmployee(employee: string) {
         this.employees.push(employee)
     }
