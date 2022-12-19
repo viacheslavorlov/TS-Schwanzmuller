@@ -73,3 +73,37 @@ function useVehicle(vehicle: Veichel) {
 
 useVehicle(v1);
 useVehicle(v2);
+
+interface Bird {
+    type: 'bird';
+    flyingSpeed: number;
+}
+
+interface Horse {
+    type: 'horse';
+    runningSpeed: number;
+}
+
+type Animal = Bird | Horse;
+
+function moveAnimal(animal: Animal) {
+    let speed;
+    switch (animal.type) {
+        case "bird":
+            speed = animal.flyingSpeed;
+            break;
+        case "horse":
+            speed = animal.runningSpeed;
+    }
+    console.log('speed is ' +  speed)
+}
+
+moveAnimal({type: "bird", flyingSpeed: 20});
+moveAnimal({type: "horse", runningSpeed: 15});
+
+// DOM manipulation
+//* first variant
+//* const userInput = <HTMLInputElement>document.getElementById("message")!;
+const userInput = document.getElementById("message")! as HTMLInputElement;
+
+userInput.value = 'hi!!!!'
