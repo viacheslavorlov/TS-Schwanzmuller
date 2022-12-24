@@ -107,3 +107,55 @@ moveAnimal({type: "horse", runningSpeed: 15});
 const userInput = document.getElementById("message")! as HTMLInputElement;
 
 userInput.value = 'hi!!!!'
+
+
+//INDEX PROPERTIES
+
+interface ErrorContainer {
+    [prop: string]: string;
+}
+
+const errorBug: ErrorContainer = {
+    1: 'first property',
+    email: "not found"
+}
+
+//* FUNCTION OVERLOADS
+
+function add2(a: number, b: number): number;
+function add2(a: string, b: string): string;
+function add2(a: string, b: number): string;
+function add2(a: string, b: number): string;
+
+function add2(a: Combinable, b:Combinable) {
+    if (typeof a === 'string' || typeof b === 'string') {
+        return a.toString() + b.toString();
+    }
+    return a + b;
+}
+
+const result = add2('Max', ' Slava');
+
+result.split(' ');
+
+//* OPTIONAL CHAINING
+
+const fetchedData = {
+    id: 'ui',
+    name: 'Slava',
+    // job: {
+    //     title: 'CEO',
+    //     description: 'startapp'
+    // }
+}
+
+// console.log(fetchedData?.job?.title)
+
+//* NULLISH COALESCING
+
+const userInput2 = null;
+// ?? - nullish coalescing
+const storedData = userInput2 ?? 'Default'
+
+console.log(storedData);
+
