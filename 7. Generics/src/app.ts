@@ -16,8 +16,10 @@ promise.then(data => {
 })
 
 function merge<T, U>(objectA: T, objectB: U) {
+    // @ts-ignore
     return Object.assign(objectA, objectB);
 }
 
-const metgedObj = merge<>({name: 'slava'}, {age: 35})
-console.log(metgedObj.age)
+const metgedObj = merge({surname: 'slava'}, {age: 35})
+const metgedObj2 = merge({name: 'slava'}, {age: 30})
+console.log(metgedObj, metgedObj2);
