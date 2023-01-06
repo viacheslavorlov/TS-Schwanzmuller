@@ -134,3 +134,25 @@ const namen: Readonly<string[]> = ["slava", 'tanya']
 //?generic types lock in the Type
 
 //?union types allows us to use different types
+
+
+//*******************************************
+
+//* Decorators
+
+function Logger(constructor: Function) {
+    console.log('logging...')
+    console.log(constructor)
+}
+@Logger
+class Person {
+    name: string = "Slava";
+
+    constructor() {
+        console.log('name', this.name)
+    }
+}
+
+const pers = new Person();
+
+console.log('pers', pers);
