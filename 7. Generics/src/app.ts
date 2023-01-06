@@ -68,8 +68,7 @@ class DataStorage<T> {
             if (this.data.indexOf(item) >= 0) {
                 this.data.splice(this.data.indexOf(item), 1)
             }
-        }
-        if (typeof item === "object" && prop) {
+        } else if (item && prop) {
             this.data = this.data.filter((element: T) => element[prop] !== item[prop])
         }
     }
