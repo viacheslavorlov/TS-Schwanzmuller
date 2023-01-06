@@ -107,3 +107,31 @@ objectStorage.addItem({name: 'marina'})
 objectStorage.removeItem({name: 'slava'}, 'name')
 
 console.log(objectStorage.getItems());
+
+
+//* GENERICS UTILITY TYPES
+
+interface CourseGoal {
+    title: string;
+    description: string;
+    completeUntil: Date;
+}
+
+function createCourseGoal(title: string, description: string, date: Date): CourseGoal {
+    let courseGoal: Partial<CourseGoal> = {}; //? Partial<> type
+    courseGoal.title = title;
+    courseGoal.description = description;
+    courseGoal.completeUntil = date;
+    return courseGoal as CourseGoal; //? need to chenge type from Partial to CourseGoal
+}
+
+
+//?Readonly
+const namen: Readonly<string[]> = ["slava", 'tanya']
+//? namen.push('anna').pop('nastya') //? cannot change
+
+//* GENERICS TYPES vs UNION TYPES
+
+//?generic types lock in the Type
+
+//?union types allows us to use different types
