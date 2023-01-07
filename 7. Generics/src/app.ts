@@ -138,21 +138,3 @@ const namen: Readonly<string[]> = ["slava", 'tanya']
 
 //*******************************************
 
-//* Decorators
-
-function Logger(constructor: Function) {
-    console.log('logging...')
-    console.log(constructor)
-}
-@Logger
-class Person {
-    name: string = "Slava";
-
-    constructor() {
-        console.log('name', this.name)
-    }
-}
-
-const pers = new Person();
-
-console.log('pers', pers);
